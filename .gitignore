@@ -59,4 +59,7 @@ typings/
 
 # next.js build output
 .next
+<<<<<<< HEAD
 sendgrid.env
+=======
+>>>>>>> ae74926350175ce0714d64d32e8e3c2ef0f9f098
