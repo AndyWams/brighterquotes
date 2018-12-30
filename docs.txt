@@ -1,0 +1,44 @@
+Steps to set a New Project
+1. Open project folder with git bash and run:  npn init
+2. Follow the sets and set up your project.
+3. create an index file.
+4. Install express using git: npm install --save express
+5. Install bower globally: npm install -g bower
+6. Install packages/components: bower install bootstrap
+
+Steps to create a record in mongoDB from cmd
+1. Run mongo shell form cmd as administrator: mongo
+2. To show all database: show dbs
+3. To create a database: use <nameofdb>
+4. To view all tables: show collections
+5. To create a table/collection: db.createCollection('nameOfTable');
+5. To insert into a table/collection: db.nameOfTable.insert({fieldOne: "value", fieldTwo:  "value",...});
+6. To list all table/renameCollection records: db.nameOfTable.find(); or db.nameOfTable.find().pretty();
+7. To rename a table/collection: db.tableName.renameCollection("NewTablename");
+8. To delete a data from a table/collection: db.<tableName>.remove({fieldName: "value"});
+9. To delete a table/collection: db.<tableName>.remove()
+
+Steps to set up mongoose
+1. Install mongoose using git in your application folder: npm install --save mongoose
+2.include/require it in your app file: const mongoose = require('mongoose');
+3. connect to the database using mongoose: mongoose.connect('mongodb://localhost/databaseName');
+4 set up database variable: let db = mongoose.connection;
+5. Create a model where to manage your database:  article.js, posts.js user.js
+6.  let mongoose = require('mongoose');
+7. //ArticleSchema:
+      let articleSchema = mongoose.schema({
+      title: {
+      type String,
+      required: true
+      },
+      author: {
+      type String,
+      required: true
+      },
+      body: {
+      type String,
+      required: true
+      }
+      });
+8. Export model so it can be accessed anywhere in your application.
+ let Article = module.exports = mongoose.model('Article', articleSchema);

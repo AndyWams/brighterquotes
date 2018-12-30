@@ -1,0 +1,21 @@
+extends layout
+
+block content            
+  .col-lg-12
+    section.d2-post
+      .row.row-wrapper
+        .col-lg-12
+          .post-list
+           .col-lg-6.form-holder
+              h1.add-post #{title}
+              form.account-form.row(method='POST', action='/blog/update_post/'+blog._id)
+                .form-field.col-lg-12
+                  span Title
+                  input.input-text(name='title', type='text', value=blog.title, required='required')
+                  input.input-text(name='author', type='text', value=blog.author hidden='hidden')
+                .form-field.col-lg-12
+                  span Body
+                  textarea.txt-area.tinymce.not-empty(name='body' rows= '20' required='required')= blog.body
+                .form-field.col-lg-12.align-center
+                  input.submit-btn(value='Update', type='submit')
+                                  

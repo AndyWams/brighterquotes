@@ -1,0 +1,30 @@
+{
+  "name": "brighter-quotes",
+  "version": "1.0.0",
+  "description": "A simple social app designed for you to share your positive stories, quotes and lots more",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Andrew Wams",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "async": "^2.6.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.3",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "mongoose": "^5.3.1",
+    "nodemailer": "^4.7.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3",
+    "sanitize-html": "^1.19.3",
+    "sendgrid": "^5.2.3",
+    "xoauth2": "^1.2.0"
+  }
+}

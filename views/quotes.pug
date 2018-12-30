@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .col-lg-12
+       section.d3-post
+        h2(class="lv2-head") Insightful quotes
+        ul.post-list-wrap
+        each kwote, i in kwotes
+          li.post-list
+            p 
+            if user
+              a(href='/quote/'+kwote._id data-toggle='tooltip' title='See quotes' data-placement='auto')= '"'+ kwote.content + '"'
+                div
+                  span.date= kwote.date.toDateString() + " ,"
+                  span.time= kwote.date.toLocaleTimeString() 
+

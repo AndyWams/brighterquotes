@@ -1,0 +1,91 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='title', content='Be an inspiration today')
+    meta(name='description', content='Brighter Quotes is a simple app created for everyone to share their postive stories/experiences, quotes, and lots more...')
+    meta(name='keywords', content='Brighter Quotes, Brighter-Quotes, Brighter, Quotes, app, Andrew Wams, Drewan,and Andrew,Wams,Drew Wams')
+    meta(name='robots', content='andrew')
+    meta(name='author', content='Andrew Wams')
+    title Brighter Quotes - App | Positve Stories  | Quotes | Lots More
+    link(rel='shortcut icon', type='image/x-icon', href='/assets/img/icon-3.png')
+    link(rel='stylesheet', href='/assets/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/styles.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/regular.css', integrity='sha384-z3ccjLyn+akM2DtvRQCXJwvT5bGZsspS4uptQKNXNg778nyzvdMqiGcqHVGiAUyY', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/fontawesome.css', integrity='sha384-u5J7JghGz0qUrmEsWzBQkfvc8nK3fUT7DCaQzNQ+q4oEXhGSx+P2OqjWsfIRB8QT', crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/css?family=Text+Me+One', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Nunito:200' rel='stylesheet')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css', type='text/css')
+    
+  body
+    section.wrapper#home
+        .container.shadow-bg
+          .row.bottom-sp
+            .col-lg-12
+              .brand-text
+                img.adjust-width(src='/assets/img/site-logo.svg')
+                h3.sm-quote-txt Be inspired everyday.
+            .col-lg-12
+              nav.navbar.navbar-expand-lg.navbar-dark.navigate-line
+                button.navbar-toggler.my-btn-toggle(type='button', data-toggle='collapse', data-target='#navbarToggler', aria-controls='navbarsExample05', aria-expanded='false', aria-label='Toggle navigation')
+                  span
+                    i.fa.fa-caret-down
+                #navbarToggler.collapse.navbar-collapse.navigate-menu
+                  ul.navbar-nav.mr-auto.block-menu
+                      if user
+                        li.nav-item.links
+                          a.nav-link.top(href='/')
+                            i.fas.fa-home
+                                                    
+                      if user
+                        li.nav-item.links
+                          a.nav-link.abt(href='/blog/add')
+                            | Share
+                      if user
+                          li.nav-item.links
+                            a.nav-link.abt(href='/quote/add')
+                              | Quotes
+                      if user
+                           li.nav-item.links
+                            a.nav-link.abt(href='/user/logout')
+                              | Logout
+                      else
+                            li.nav-item.links
+                              a.nav-link.top(href='/')
+                                i.fas.fa-home
+                            li.nav-item.links
+                              a.nav-link.top(href='/')
+                                | About
+                            li.nav-item.links
+                              a.nav-link.login(href='/user/login')
+                                | Login
+                            li.nav-item.links
+                              a.nav-link(href='/user/register')
+                                | Signup
+
+            block content
+
+            .col-lg-12
+              Section.footer-line.fixed-bottom
+                p.footer-center Dev by 
+                  a(href='https://andrewwams.com' target= "_blank")
+                    span.footer-img
+                      img(src='/assets/img/wams-brand.svg', width='26')
+
+
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
+    script(src='/assets/bootstrap/dist/js/bootstrap.min.js', type='text/javascript')
+    script(src='/assets/tinymce/tinymce.min.js', type='text/javascript')
+    script(src='/assets/tinymce/init-tinymce.js', type='text/javascript')
+    script(src='/js/main.js', type='text/javascript')
+

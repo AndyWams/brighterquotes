@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .col-lg-12
+      section.d2-post
+        .row.row-wrapper
+          .col-lg-12
+            .post-list
+             .col-lg-6.form-holder
+                h1.add-quote #{title}
+                form.account-form.row(method='POST', action='/quote/update_quote/'+quote._id)
+                  .form-field.col-lg-12
+                    textarea.txt-area.not-empty(name='content' rows= '20' required='required')= quote.content
+                    input.input-text(name='author', type='text', value=quote.author hidden='hidden')
+                  .form-field.col-lg-12.align-center
+                    input.submit-btn(value='Update', type='submit')
+                                    
+
+
+                

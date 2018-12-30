@@ -1,0 +1,36 @@
+extends layout
+
+block content            
+  .col-lg-12
+    section.d2-post
+      .row.row-wrapper
+        .col-lg-12
+          .post-list
+            h1(class="post-style")= blog.title
+            h4 ~ #{author}
+            div
+              span.date= blog.date.toDateString() + " ,"
+              span.time= blog.date.toLocaleTimeString() 
+             
+            br
+            div(class= "cnt-bdy") !{blog.body}
+            hr
+            if user
+              if user.id == blog.author
+                span.edit
+                  a.btn.btn-primary(href='/blog/update_post/'+blog._id) Edit
+                span.delete
+                  button.btn.btn-danger.delete-post(data-toggle="modal", data-target="#confirm-delete") Delete Post
+                  #confirm-delete.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+                    .modal-dialog
+                      .modal-content
+                        .modal-body
+                          p
+                            | You are about to delete 
+                            |  this post
+                          p Do you want to proceed?
+                        .modal-footer
+                          button.btn.btn-default(type='button', data-dismiss='modal') Cancel
+                          button.btn.btn-danger.btn-delete(type='DELETE',href='#', data-id=blog._id) Delete
+                                        
+              

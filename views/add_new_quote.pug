@@ -1,0 +1,26 @@
+extends layout
+
+block content            
+  .col-lg-12
+    section.d2-post
+      .row.row-wrapper
+        .col-lg-12
+          .error-disp
+                  != messages('message', locals)
+                  if errors 
+                    each error, i in errors
+                      div(class="alert alert-danger") #{error.msg}
+          .post-list
+           .col-lg-6.form-holder
+              h1.add-quote #{title}
+              form.account-form.row(method='POST', action='/quote/add')
+                .form-field.col-lg-12
+                  span Write a quote
+                  textarea.txt-area.not-empty(name='content' rows= '20' required ='required')
+                .form-field.col-lg-12.align-center
+                  input.submit-btn(value='Share', type='submit')
+                 
+                                  
+
+    
+      

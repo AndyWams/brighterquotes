@@ -1,0 +1,62 @@
+extends layout
+
+block content
+    .col-lg-8
+      section.d2-post
+        .error-disp
+          != messages('message', locals)
+          if errors 
+            each error, i in errors
+              div(class="alert alert-danger") #{error.msg}
+        if user
+          h2(class="lv2-head") Post of the day
+          ul.post-list-wrap
+            each post, i in posts.slice(0, 3)
+              li.post-list
+                p 
+                  a(href='/blog/'+post._id data-toggle='tooltip' title='Read posts' data-placement='auto')= post.title
+
+            if posts.length >= 3
+              p.load-more 
+                button.load-more.btn.btn-info
+                  a(href='/blogs') All posts
+
+
+        else 
+          h2(class="lv2-head greet") Welcome...
+          .post-list.fade-in
+            p "Brighter 💡 Quotes" is a fun environment to share inspiring experiences ✨  and  to learn from brighter minds across the globe.
+            p Brighter 💡 Quotes is a small blog space where everyone is a blogger. It is designed with the aim to inspire someone far or near you.
+            p Signup and start sharing your brighter experiences today 🏃🏃🏃.
+
+    .col-lg-4
+      if !user
+        section.d3-post
+         
+            h2(class="lv2-head") Contact
+            .post-list-wrap
+              .post-list
+                span  For enquiries or suggestions on how to improve our services send us a mail.
+                br
+                p 📧: andrew.wams@gmail.com
+
+      section.d3-post
+        h2(class="lv2-head") Insightful quotes
+        ul.post-list-wrap
+        each kwote, i in kwotes.slice(0, 3)
+
+          li.post-list
+            p 
+            if user
+              a(href='/quote/'+kwote._id data-toggle='tooltip' title='See quotes' data-placement='auto')= '"'+ kwote.content + '"'
+
+            else
+                a(href='/quote/'+kwote._id data-toggle='tooltip' title='See quotes' data-placement='auto')= '"'+ kwote.content + '"' 
+        if kwotes.length > 1
+          p.load-more 
+            button.load-more.btn.btn-info
+              a(href='/quotes/') Show more
+
+
+
+        

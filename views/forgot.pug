@@ -1,0 +1,24 @@
+extends layout
+
+block content            
+  .col-lg-12
+      section.d2-post
+        .post-list.fade-in
+          .row.row-wrapper
+            .col-lg-12
+               .error-disp
+                  != messages('message', locals)
+                  if errors 
+                    each error, i in errors
+                      div(class="alert alert-danger") #{error.msg}
+            .col-lg-6.form-holder
+              h1.signup Forgot Password
+              form.account-form.row(method='POST', action='/forgot')
+                .form-field.col-lg-12
+                  input#email.input-text.js-text(name='email' type='text', required='')
+                  label.label(for='email') Email
+                .form-field.col-lg-12.align-center
+                  input.submit-btn(type='submit', value='Reset Password')
+            
+                    
+

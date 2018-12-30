@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    .col-lg-12
+      section.d2-post
+        .row.row-wrapper
+          .col-lg-12
+            .post-list
+              br
+              div
+              span.date= quote.date.toDateString() + " ,"
+              span.time= quote.date.toLocaleTimeString() 
+              p= quote.content + ' ~' 
+              small posted by  #{author}
+              p 
+              hr
+              if user
+                if user.id == quote.author
+                  span.edit
+                    a.btn.btn-primary(href='/quote/update_quote/'+quote._id) Edit
+                  span.delete
+                  button.btn.btn-danger.delete-quote(data-toggle="modal", data-target="#confirm-delete") Delete Quote
+                  #confirm-delete.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+                    .modal-dialog
+                      .modal-content
+                        .modal-body
+                          p
+                            | You are about to delete 
+                            |  this post
+                          p Do you want to proceed?
+                        .modal-footer
+                          button.btn.btn-default(type='button', data-dismiss='modal') Cancel
+                          button.btn.btn-danger.btn-ok(type='DELETE',href='#', data-id=quote._id) Delete
+                                          
+
+    

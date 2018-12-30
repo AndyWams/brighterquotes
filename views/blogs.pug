@@ -1,0 +1,46 @@
+extends layout
+
+block content            
+  .col-lg-12
+    section.d2-post
+      .row.row-wrapper
+        .col-lg-12
+          if user
+          h2(class="lv2-head") All Posts
+          ul.post-list-wrap
+            each post, i in posts
+              li.post-list
+                p 
+                  a(href='/blog/'+post._id data-toggle='tooltip' title='Read story' data-placement='auto')= post.title
+                   div
+                    span.date= post.date.toDateString() + " ,"
+                    span.time= post.date.toLocaleTimeString() 
+
+      .container.paginate-wrapper     
+          if pages > 0
+           ul.pagination
+            if current > 1
+             li
+              a(href='/blogs')  First
+            - var x = 1
+            if current > 5
+             - x = x + (current - 4)
+            if (x !== 1)
+               li.disabled
+                  a(href='#') ...
+            - for (x; x <= pages; x++)
+               if( current == x)
+                li.active
+                  span.sr_only= current
+               else
+                 li
+                   a(href= "/blogs/pages/"+x )
+                    = x
+               if x == (current + 4)
+                   li.disabled
+                    a(href="#") ...
+                    - break
+            if current != page
+            li
+                a(href= `/blogs/pages/`+ Math.floor(pages)) Last
+
