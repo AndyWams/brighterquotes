@@ -10,8 +10,8 @@ block content
               div
               span.date= quote.date.toDateString() + " ,"
               span.time= quote.date.toLocaleTimeString() 
-              p= quote.content + ' ~' 
-              small posted by  #{author}
+              div.cnt-bdy= quote.content + ' ~' 
+              h4 shared by  #{author}
               p 
               hr
               if user
