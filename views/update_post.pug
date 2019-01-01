@@ -10,11 +10,11 @@ block content
               h1.add-post #{title}
               form.account-form.row(method='POST', action='/blog/update_post/'+blog._id)
                 .form-field.col-lg-12
-                  span Title
+                  span.form-post-title  Title
                   input.input-text(name='title', type='text', value=blog.title, required='required')
                   input.input-text(name='author', type='text', value=blog.author hidden='hidden')
                 .form-field.col-lg-12
-                  span Body
+                  span.form-post-title  Body
                   textarea.txt-area.tinymce.not-empty(name='body' rows= '20' required='required')= blog.body
                 .form-field.col-lg-12.align-center
                   input.submit-btn(value='Update', type='submit')

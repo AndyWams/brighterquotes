@@ -201,6 +201,7 @@ h1.login, .signup, .post-style{
 .cnt-bdy {
     padding: 16px;
     font-family: 'Nunito', sans-serif;
+    font-size: 15px;
 }
 
 .d2-post h4 {

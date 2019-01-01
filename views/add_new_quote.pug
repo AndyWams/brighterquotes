@@ -15,7 +15,7 @@ block content
               h1.add-quote #{title}
               form.account-form.row(method='POST', action='/quote/add')
                 .form-field.col-lg-12
-                  span Write a quote
+                  span.form-post-title  Write a quote
                   textarea.txt-area.not-empty(name='content' rows= '20' required ='required')
                 .form-field.col-lg-12.align-center
                   input.submit-btn(value='Share', type='submit')
