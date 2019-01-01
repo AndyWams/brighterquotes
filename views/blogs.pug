@@ -10,7 +10,7 @@ block content
           ul.post-list-wrap
             each post, i in posts
               li.post-list
-                p 
+                p.intro-title  
                   a(href='/blog/'+post._id data-toggle='tooltip' title='Read story' data-placement='auto')= post.title
                    div
                     span.date= post.date.toDateString() + " ,"
